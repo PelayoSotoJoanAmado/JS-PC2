@@ -1,0 +1,55 @@
+<section class="alumnos">
+    <table>
+        <tbody>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>N1</th>
+                <th>N2</th>
+                <th>Promedio</th>
+                <th>Condición</th>
+            </tr>
+            @for (alumno of alumnos; track alumno.codigo){
+            <tr >
+                <td>{{ alumno.codigo | uppercase }}</td>
+                <td>{{ alumno.nombre | uppercase }}</td>
+                <td>{{ alumno.nota1 }}</td>
+                <td>{{ alumno.nota2 }}</td>
+                <td>{{ calcularPromedio(alumno.nota1, alumno.nota2) | number:'1.2-3' }}</td>
+                <td [ngClass]="{
+                    'aprobado': getCondicion(alumno.nota1, alumno.nota2) === 'Aprobado',
+                    'desaprobado': getCondicion(alumno.nota1, alumno.nota2) === 'Desaprobado'
+                }">
+                    {{ getCondicion(alumno.nota1, alumno.nota2) }}
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <div class="formulario-container">
+        <h3>Registrar Nuevo Alumno</h3>
+        <input type="text" [(ngModel)]="nuevoCodigo" placeholder="Código">
+        <input type="text" [(ngModel)]="nuevoNombre" placeholder="Nombre">
+        <input type="number" [(ngModel)]="nuevaNota1" placeholder="Nota 1" min="0" max="20">
+        <input type="number" [(ngModel)]="nuevaNota2" placeholder="Nota 2" min="0" max="20">
+        <button (click)="agregarAlumno()">Agregar</button>
+    </div>
+
+    <pre>{{ alumnos | json }}</pre>
+
+    <div class="demostracion-pipes">
+        <h3>Demostración de Pipes (Alumno: {{ alumnos[1].nombre }})</h3>
+        <p><strong>Slice (Primeras 4 letras):</strong> {{ alumnos[1].nombre | slice:0:4 }}</p>
+        <p><strong>Titlecase (Formato Título):</strong> {{ alumnos[1].nombre | titlecase }}</p>
+        <p><strong>Lowercase (Minúsculas):</strong> {{ alumnos[1].nombre | lowercase }}</p>
+        <p><strong>Percent (Porcentaje de la nota):</strong> {{ (alumnos[1].nota1 / 100) | percent }}</p>
+        <p><strong>Number (Nota con decimales):</strong> {{ alumnos[1].nota1 | number:'1.2-2' }}</p>
+        <p><strong>Currency (Nota en moneda):</strong> {{ alumnos[1].nota1 | currency:'PEN' }}</p>
+        <p><strong>Date (Fecha de hoy):</strong> {{ fechaActual | date:'longDate' }}</p>
+    </div>
+
+
+    <!-- <input type="text" [(ngModel)]="nombre">  {{ nombre }} -->
+</section>
