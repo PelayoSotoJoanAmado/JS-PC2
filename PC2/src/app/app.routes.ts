@@ -4,7 +4,8 @@ import { Inicio } from './pages/inicio/inicio';
 import { Productos } from './pages/productos/productos';
 import { Registro } from './pages/registro/registro';
 import { Alumnos } from './pages/alumnos/alumnos';
-import { Cnotas } from './pages/cnotas/cnotas';
+import { Pregunta01 } from './pages/pregunta01/pregunta01';
+import { Pregunta02 } from './pages/pregunta02/pregunta02';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -12,6 +13,7 @@ export const routes: Routes = [
     { path: 'productos', component: Productos},
     { path: 'registro', component: Registro},
     { path:'alumnos', component: Alumnos },
-    { path:'notas', component: Cnotas },
+    { path: 'pregunta1', component: Pregunta01 },
+    { path: 'pregunta2', component: Pregunta02 },
     { path: '**', redirectTo: 'inicio'}
 ];

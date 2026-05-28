@@ -1,0 +1,25 @@
+<section class="contenedor">
+    <section class="seccion">
+        <h1>Pregunta Estudiante</h1>
+        <div class=formulario>
+            <label>Nota 1</label>
+            <input class="entrada" type="number" [(ngModel)]="nota1" min="0" max="20">
+            <label>Nota 2</label>
+            <input class="entrada" type="number" [(ngModel)]="nota2" min="0" max="20">
+            <label>Nota 3</label>
+            <input class="entrada" type="number" [(ngModel)]="nota3" min="0" max="20">
+        </div>
+        <div class="botones">
+            <button (click)="procesarResultado()" class="boton">Procesar</button>
+            <button (click)="limpiarF()" class="boton">Limpieza</button>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2>Resultados</h2>
+        <p>Suma de notas: {{ sumaNotas }}</p>
+        <p>Promedio: {{ promedioNotas | number:'1.2-2' }}</p>
+        <p>Estado Académico: {{ estadoAcademico }}</p>
+        <p>Observación: {{ observacion }}</p>
+    </section>
+</section>

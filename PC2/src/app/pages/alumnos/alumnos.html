@@ -10,18 +10,23 @@
                 <th>Condición</th>
             </tr>
             @for (alumno of alumnos; track alumno.codigo){
-            <tr >
+            <tr>
                 <td>{{ alumno.codigo | uppercase }}</td>
                 <td>{{ alumno.nombre | uppercase }}</td>
                 <td>{{ alumno.nota1 }}</td>
                 <td>{{ alumno.nota2 }}</td>
                 <td>{{ calcularPromedio(alumno.nota1, alumno.nota2) | number:'1.2-3' }}</td>
-                <td [ngClass]="{
+                @if (getCondicion(alumno.nota1, alumno.nota2) === 'Aprobado'){
+                    <td class="aprobado">Aprobado</td>
+                } @else {
+                    <td class="desaprobado">Desaprobado</td>
+                }
+                <!-- <td [ngClass]="{
                     'aprobado': getCondicion(alumno.nota1, alumno.nota2) === 'Aprobado',
                     'desaprobado': getCondicion(alumno.nota1, alumno.nota2) === 'Desaprobado'
                 }">
                     {{ getCondicion(alumno.nota1, alumno.nota2) }}
-                </td>
+                </td> -->
             </tr>
             }
 

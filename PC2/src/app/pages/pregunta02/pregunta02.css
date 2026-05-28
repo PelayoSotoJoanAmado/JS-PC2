@@ -1,0 +1,43 @@
+.contenedor {
+    max-width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 16px;
+}
+
+.seccion {
+    border-radius: 14px;
+    background: rgb(245, 229, 229);
+    padding: 24px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+}
+
+.formulario {
+    display: grid;
+    gap: 10px;
+}
+
+.boton {
+    border: none;
+    border-radius: 5px;
+    background-color: #4897e0;
+    padding: 10px 16px;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.entrada {
+    padding: 10px;
+    border: 1px solid #cfd8dc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.botones {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+}

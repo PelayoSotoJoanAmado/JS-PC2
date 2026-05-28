@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-alumnos',
@@ -34,12 +33,14 @@ export class Alumnos {
   nuevaNota1: number = 0;
   nuevaNota2: number = 0;
 
+  // test2 = "nombre";
+
   agregarAlumno() {
     if (this.nuevaNota1 < 0 || this.nuevaNota1 > 20 || this.nuevaNota2 < 0 || this.nuevaNota2 > 20) {
       alert('Las notas deben estar entre 0 y 20.');
       return;
     }
-    
+
     if (this.nuevoCodigo === '' || this.nuevoNombre === '') {
       alert('Todos los campos son obligatorios.');
       return;
@@ -61,6 +62,7 @@ export class Alumnos {
 
   getCondicion(nota1: number, nota2: number): string {
     const promedio = this.calcularPromedio(nota1, nota2);
-    return promedio >= 13 ? 'Aprobado' : 'Desaprobado';
+    let verificar = promedio >= 13 ? 'Aprobado' : 'Desaprobado';
+    return verificar;
   }
 }

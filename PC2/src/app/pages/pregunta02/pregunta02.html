@@ -1,0 +1,27 @@
+<section class="contenedor">
+    <section class="seccion">
+        <h1>Pregunta peso</h1>
+        <div class=formulario>
+            <label>Nombre</label>
+            <input class="entrada" type="string" [(ngModel)]="nombre" placeholder="Ingrese tu edad">
+            <label>Correo</label>
+            <input class="entrada" type="email" [(ngModel)]="correo" placeholder="Ingrese su correo">
+            <label>Peso (en KG)</label>
+            <input class="entrada" type="number" [(ngModel)]="peso" min="0">
+            <label>Altura (en Metros)</label>
+            <input class="entrada" type="number" [(ngModel)]="altura">
+
+        </div>
+        <div class="botones">
+            <button (click)="procesarIMC()" class="boton">Procesar</button>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2>Resultados</h2>
+        <p>IMC: {{ imc }} </p>
+        <p>Resultado Final: {{ resultadoFinal}} </p>
+
+    </section>
+
+</section>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
+import { Productos } from './pages/productos/productos';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,6 @@ import { Navbar } from './components/navbar/navbar';
 })
 export class App {
   title = 'tienda-angular';
+
+
 }
